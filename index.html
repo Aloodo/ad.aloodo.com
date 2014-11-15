@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>ad.aloodo.com</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>ad.aloodo.com</h1>
+          <h2>Help fix Internet advertising for users, sites, and brands.</h2>
+        </header>
+
+        <section id="main_content">
+
+<h1>What does the warning mean?</h1>
+
+<p>The <q>Third-party tracking detected</q> message
+is a warning that your browser is vulnerable to a <a
+href="https://wiki.mozilla.org/Thirdparty">well-known
+flaw</a> called third-party tracking.  In most cases
+you need to install software to protect yourself.</p>
+
+<p>When you protect yourself from third-party
+tracking, you're also doing the whole Web a favor.
+You're helping to:</p>
+
+<ul><li>Protect your favorite web sites from
+advertising fraud.</li>
+
+<li>Keep the brands who advertise to you from
+supporting malicious software and illegal
+sites.</li></ul>
+
+<p>You can help advertisers spend less on the annoying
+ads that <q>follow</q> you around the web, and more
+on ads that help pay for the web sites you use.</p>
+
+<p><strong>Did you know that most of the money that
+advertisers spend on the web today goes to middlemen
+and fraud?</strong>  Classic ad agencies used to take
+15% of the ad budget. On the web, 55% to 75% goes to
+intermediaries, or is lost to scams.  Please help
+bring fairness to the ad-supported web by protecting
+yourself from tracking.</p>
+
+
+<h1 id="tools">Install a simple security tool to protect yourself and the web</h1>
+
+<p>Several kinds of third-party tracking protection
+are available.  Some good options are listed on
+<a href="http://www.aloodo.org/protection/#tools">the aloodo.org
+tracking protection page.</a>
+
+</section>
+
+<hr>
+
+<section>
+
+<h1>For brands and publishers</h1>
+
+<p>Increase the value of your brand and your content
+by using tracking protection.  More info on the
+<a href="http://www.aloodo.com/">Aloodo home page</a>.
+
+<p>By helping your users, you are working together
+with other responsible advertisers and publishers to create
+the new brand-friendly generation of web advertising.</p>
+
+
+<h2>Quick start</h2>
+
+<p>Want to give your users a quick reminder?  Add the
+script to your site.</p>
+
+<pre><code>&lt;script src="http://ad.aloodo.com/ad.js"&gt;&lt;/script&gt;
+</code></pre>
+
+<p>This script will load one invisible iframe and
+attempt to <q>track</q> the user from site to site.
+If tracking succeeds, it will load additional
+JavaScript and CSS and show a warning.</p>
+
+<p>Users won't see the warning until they visit the
+<em>second</em> site that runs the iframe.</p>
+
+<h2>Your own tracking warnings</h2>
+
+<p>By default, the above script will load and
+display a warning pop-up.  If you prefer to
+supply your own warning, add an element with
+<code>id="tracking-warning-block"</code> or
+<code>id="tracking-warning-inline"</code> and
+<code>style="display: none"</code> to the page.
+Instead of displaying the popup, the script will set
+the existing element to block or inline.</p>
+
+<h2>Customize it</h2>
+
+<p>If you prefer to use your own action to
+notify tracked users, you can also include <a
+href="http://ad.aloodo.com/track/">http://ad.aloodo.com/track/</a>
+in an iframe, and handle the <q>tracking detected</q>
+message in your own script.</p>
+
+<pre><code>&lt;iframe style="display: none"
+ src="http://ad.aloodo.com/track/"&gt;&lt;/iframe&gt;</code></pre>
+
+<h2>Setting up a reverse tracking wall</h2>
+
+<p>Info coming soon.</p>
+
+
+<h2>Silent mode</h2>
+
+<p>Just put <a
+href="http://ad.aloodo.com/track/">http://ad.aloodo.com/track/</a>
+in an iframe, and ignore the message.  Your users will
+see a notification later, on other sites, if we can
+"track" them.</p>
+
+
+<h2>Try it </h2>
+
+<p>To see how it works, visit this page in an unprotected browser, then click a link to <a
+href="http://zgp.org/targeted-advertising-considered-harmful/">another page using the script</a>.  You should see a <q>Third-party tracking detected</q>
+notification.</p>
+
+
+<h2>Questions? Suggestions?</h2>
+
+<p>Post an issue on the <a
+href="https://github.com/Aloodo/ad.aloodo.com">project
+on GitHub</a>.
+
+</section>
+<hr>
+<section>
+
+<h1>More information</h1>
+
+<p>Learn more about the
+third-party tracking problem at <a
+href="http://zgp.org/targeted-advertising-considered-harmful/"/>Targeted
+Advertising Considered Harmful</a>.</p>
+
+        </section>
+        
+        <footer>
+          Tactile theme by <a href="https://twitter.com/jasonlong">Jason
+		  Long</a>.
+
+		  <br><a href="http://codeseven.github.io/toastr/">Toastr</a> notifications by Hans Fjällemark, John Papa, and Tim Ferrell.
+
+        </footer>
+        
+      </div>
+    </div>
+	<script src="/ad.js"></script>
+  </body>
+</html>

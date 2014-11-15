@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+ 	<title>ad.aloodo.com tracker</title>
+<script type="text/javascript">
+
+function setCookie(name, value) {
+	var date = new Date();
+	date.setTime(date.getTime()+(365*24*60*60*1000));
+	var expires = "; expires="+date.toGMTString();
+	document.cookie = name+"="+value+expires+"; path=/";
+	return value;
+}
+
+function getCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		if (c.indexOf(nameEQ) == 0) {
+			return c.substring(nameEQ.length,c.length);
+		}
+    }
+    return '';
+}
+
+function getHost() {
+	// within an iframe, "referrer" is the containing page.
+	if (parent !== window) {
+		url = document.referrer;
+	} else {
+		url = document.location;
+	}
+	var tmp = document.createElement('a');
+	tmp.href = url;
+	return tmp.hostname;
+}
+
+function addSite(site) {
+	var sts = getCookie('site').split(' ');
+	sts.push(site);
+	// remove duplicates
+    sts.sort();
+	for(var i = 1; i < sts.length; i++) {
+		if (sts[i-1] == sts[i])
+			sts.splice(i--, 1);
+	}
+	return setCookie('site', sts.join(' '));
+}
+
+function doTrack() {
+	var here = getHost();
+	var where = addSite(here);
+
+	document.getElementById('whereseen').innerHTML = where;
+
+	if (where != here && here != 'ad.aloodo.com') {
+		parent.postMessage('tracking detected', '*');
+	} 
+}
+document.addEventListener("DOMContentLoaded", doTrack);
+
+
+</script> </head><body>
+
+<p>This page is part of the <a
+href="http://ad.aloodo.com/">ad.aloodo.com</a> web
+tracking warning system.  For best results, put it
+in a hidden iframe on your site.</p>
+
+<p>This iframe has been seen on <b id="whereseen">(nowhere yet)</b></p>
+
+</body></html>
