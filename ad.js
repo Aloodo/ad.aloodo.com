@@ -1,5 +1,5 @@
 function doAloodoPopup() {
-	var url = 'http://ad.aloodo.com/';
+	var url = 'http://www.aloodo.org/protection/';
 	var message = 	'<b>Third-party tracking detected.</b> ' +
 			'Missing or misconfigured tracking protection.';
 	var txt = '<a href="' + url + '">' + message + '</a>';
@@ -32,15 +32,25 @@ function startAloodo(ev) {
 		return;
 	}
 
+	if (window.trackingAlternateLocation) {
+		window.location.href = trackingAlternateLocation;
+		return;
+	}
+
 	var safety = document.getElementById('tracking-safety');
 	if (safety) {
-		warning.style.display = 'none';
+		safety.style.display = 'none';
 	}
 
 	var done = false;
 	var warning = document.getElementById('tracking-warning-block');
 	if (warning) {
 		warning.style.display = 'block';
+		done = true;
+	}
+	var warning = document.getElementById('tracking-warning-table-cell');
+	if (warning) {
+		warning.style.display = 'table-cell';
 		done = true;
 	}
 	var warning = document.getElementById('tracking-warning-inline');

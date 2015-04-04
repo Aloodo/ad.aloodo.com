@@ -40,22 +40,31 @@ function getHost() {
 function addSite(site) {
 	var sts = getCookie('site').split(' ');
 	sts.push(site);
-	// remove duplicates
-    sts.sort();
-	for(var i = 1; i < sts.length; i++) {
-		if (sts[i-1] == sts[i])
-			sts.splice(i--, 1);
-	}
-	return setCookie('site', sts.join(' '));
+    var seen = {};
+    var out = [];
+    var len = sts.length;
+    var j = 0;
+    for(var i = 0; i < len; i++) {
+		var item = sts[i];
+		if (item.endsWith('aloodo.com')) {
+			continue;
+		}
+		if(seen[item] !== 1) {
+               seen[item] = 1;
+               out[j++] = item;
+         }
+    }
+	setCookie('site', out.join(' '));
 }
 
 function doTrack() {
-	var here = getHost();
-	var where = addSite(here);
+	addSite(getHost());
+	var sites = getCookie('site');
+	var siteCount = sites.split(' ').length;
 
-	document.getElementById('whereseen').innerHTML = where;
+	document.getElementById('whereseen').innerHTML = sites;
 
-	if (where != here && here != 'ad.aloodo.com') {
+	if (siteCount > 1) {
 		parent.postMessage('tracking detected', '*');
 	} 
 }
