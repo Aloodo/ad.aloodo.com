@@ -5,7 +5,7 @@ Third-party tracking protection tool for content sites.
 
 Info at: [ad.aloodo.com](http://ad.aloodo.com/)
 
-Tracking page: [ad.aloodo.com/track/](http://ad.aloodo.com/track/)
+Test it at: [tracking protection test](http://www.aloodo.org/test/)
 
 How it works
 ------------
@@ -48,4 +48,9 @@ FAQ
 **Can I add just the iframe and not ad.js to my site?** Yes, please.
 
 **Can I fork this, send pull requests, all that stuff?** Yes, please.
+
+**What should I install to protect myself from third-party tracking?**  Get good [tracking protection](http://www.aloodo.org/protection/), not just
+a general-purpose ad blocker.
+
+
 

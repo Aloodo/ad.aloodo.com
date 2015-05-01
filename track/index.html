@@ -58,11 +58,16 @@ function addSite(site) {
 }
 
 function doTrack() {
-	addSite(getHost());
+	var here = getHost();
+	addSite(here);
 	var sites = getCookie('site');
 	var siteCount = sites.split(' ').length;
 
 	document.getElementById('whereseen').innerHTML = sites;
+
+	if (here == 'ad.aloodo.com') {
+		return;
+	}
 
 	if (siteCount > 1) {
 		parent.postMessage('tracking detected', '*');
@@ -70,13 +75,14 @@ function doTrack() {
 }
 document.addEventListener("DOMContentLoaded", doTrack);
 
-
 </script> </head><body>
 
 <p>This page is part of the <a
 href="http://ad.aloodo.com/">ad.aloodo.com</a> web
-tracking warning system.  For best results, put it
-in a hidden iframe on your site.</p>
+tracking warning system.</p>
+
+<p>Example: <a href="http://www.aloodo.org/test/">Aloodo tracking
+protection test</a></p>
 
 <p>This iframe has been seen on <b id="whereseen">(nowhere yet)</b></p>
 

@@ -1,3 +1,5 @@
+// Info here: http://ad.aloodo.com/
+
 function doAloodoPopup() {
 	var url = 'http://www.aloodo.org/protection/';
 	var message = 	'<b>Third-party tracking detected.</b> ' +
