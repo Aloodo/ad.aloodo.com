@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html><head>
 	<meta charset="utf-8" />
+	<meta name="robots" content="noindex">
  	<title>ad.aloodo.com tracker</title>
 <script type="text/javascript">
 
@@ -38,7 +39,12 @@ function getHost() {
 }
 
 function addSite(site) {
-	var sts = getCookie('site').split(' ');
+	var sitecookie = getCookie('site');
+	var ls = localStorage.getItem('site');
+	if (ls) {
+		sitecookie += ' ' + ls;
+	}
+	var sts = sitecookie.split(' ');
 	sts.push(site);
     var seen = {};
     var out = [];
@@ -46,7 +52,7 @@ function addSite(site) {
     var j = 0;
     for(var i = 0; i < len; i++) {
 		var item = sts[i];
-		if (item.endsWith('aloodo.com')) {
+		if (!item || item.endsWith('aloodo.com')) {
 			continue;
 		}
 		if(seen[item] !== 1) {
@@ -54,7 +60,9 @@ function addSite(site) {
                out[j++] = item;
          }
     }
-	setCookie('site', out.join(' '));
+	var newcookie = out.join(' ');
+	setCookie('site', newcookie);
+	localStorage.setItem('site', newcookie);
 }
 
 function doTrack() {
@@ -81,8 +89,8 @@ document.addEventListener("DOMContentLoaded", doTrack);
 href="http://ad.aloodo.com/">ad.aloodo.com</a> web
 tracking warning system.</p>
 
-<p>Example: <a href="http://www.aloodo.org/test/">Aloodo tracking
-protection test</a></p>
+<p>Please take the <a href="http://www.aloodo.org/test/">Aloodo tracking
+protection test</a>.</p>
 
 <p>This iframe has been seen on <b id="whereseen">(nowhere yet)</b></p>
 
