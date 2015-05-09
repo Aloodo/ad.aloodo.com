@@ -52,5 +52,8 @@ FAQ
 **What should I install to protect myself from third-party tracking?**  Get good [tracking protection](http://www.aloodo.org/protection/), not just
 a general-purpose ad blocker.
 
+**Why does it need to track across three sites, not just two?** The [Privacy Badger](https://www.eff.org/privacybadger) extension needs to see tracking on three sites in order to start blocking.  If Aloodo alerted to blocking at two, it would be confusing for Privacy Badger users.
+
+
 
 

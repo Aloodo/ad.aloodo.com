@@ -77,7 +77,7 @@ function doTrack() {
 		return;
 	}
 
-	if (siteCount > 1) {
+	if (siteCount >= 3) {
 		parent.postMessage('tracking detected', '*');
 	} 
 }
@@ -85,13 +85,16 @@ document.addEventListener("DOMContentLoaded", doTrack);
 
 </script> </head><body>
 
-<p>This page is part of the <a
-href="http://ad.aloodo.com/">ad.aloodo.com</a> web
-tracking warning system.</p>
+<p>This page is part of Aloodo.</p>
 
-<p>Please take the <a href="http://www.aloodo.org/test/">Aloodo tracking
+<p>Please take the <a
+href="http://www.aloodo.org/test/">Aloodo tracking
 protection test</a>.</p>
 
-<p>This iframe has been seen on <b id="whereseen">(nowhere yet)</b></p>
+<p>This page has been seen on <b
+id="whereseen">(nowhere yet)</b></p>
+
+<p>How to use this page on your own site: <a
+href="http://ad.aloodo.com/">ad.aloodo.com</a></p>
 
 </body></html>
