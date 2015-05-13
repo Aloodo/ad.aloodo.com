@@ -39,6 +39,7 @@ function getHost() {
 }
 
 function addSite(site) {
+	var fp = 'aloodo.com';
 	var sitecookie = getCookie('site');
 	var ls = localStorage.getItem('site');
 	if (ls) {
@@ -52,7 +53,7 @@ function addSite(site) {
     var j = 0;
     for(var i = 0; i < len; i++) {
 		var item = sts[i];
-		if (!item || item.endsWith('aloodo.com')) {
+		if (!item || item.indexOf(fp, item.length - fp.length) !==-1) {
 			continue;
 		}
 		if(seen[item] !== 1) {

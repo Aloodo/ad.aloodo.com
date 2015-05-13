@@ -72,10 +72,12 @@ function startAloodo(ev) {
 	}
 }
 
+function isMSIE() {
+	return "ActiveXObject" in window
+}
+
 function setupAloodo() {
-	// This puts the tracker in an iframe.  The
-	// tracker may then call startAloodo in its
-	// parent.
+	// This puts the tracker in an iframe.
 	var ifr = document.createElement('iframe');
 	ifr.src = "//ad.aloodo.com/track/";
 	ifr.style.visibility = 'hidden';
@@ -84,3 +86,10 @@ function setupAloodo() {
 
 window.addEventListener("message", startAloodo, false);
 document.addEventListener("DOMContentLoaded", setupAloodo);
+
+// Workaround for not being able to send cross-domain messages
+// from iframe to its parent.  Assumes that MSIE is unprotected
+// if this script runs at all.
+if (isMSIE()) {
+	window.postMessage('tracking detected', '*');
+}
