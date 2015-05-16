@@ -19,13 +19,13 @@ function toastrSetup() {
 		doAloodoPopup();
 	}
 	var sc = document.createElement('script');
-	sc.setAttribute('src', 'http://ad.aloodo.com/toastr/toastr.min.js');
+	sc.setAttribute('src', 'http://ad.aloodo.com/toastr/toastr.js');
 	document.body.appendChild(sc);
 	sc.onload = doAloodoPopup();
 	var cs = document.createElement('link');
 	cs.setAttribute("rel", "stylesheet");
 	cs.setAttribute("type", "text/css");
-	cs.setAttribute("href", 'http://ad.aloodo.com/toastr/toastr.min.css');
+	cs.setAttribute("href", 'http://ad.aloodo.com/toastr/toastr.css');
 	document.getElementsByTagName('head')[0].appendChild(cs);
 }
 
