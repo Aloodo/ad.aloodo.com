@@ -35,6 +35,7 @@ function startAloodo(ev) {
 	}
 
 	if (window.trackingAlternateLocation) {
+		document.getElementsByTagName('body')[0].style.display='none';
 		window.location.href = trackingAlternateLocation;
 		return;
 	}
