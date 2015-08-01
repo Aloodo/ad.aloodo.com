@@ -44,14 +44,6 @@ sites.</li></ul>
 ads that <q>follow</q> you around the web, and more
 on ads that help pay for the web sites you use.</p>
 
-<p><strong>Did you know that most of the money
-that advertisers spend on the web today goes to
-middlemen and fraud?</strong>  Classic ad agencies
-used to take 15% of the ad budget. On the web, 75%
-to 90% goes to intermediaries, or is lost to scams.
-When you protect yourself from tracking, you are
-helping to fix the ad-supported web.</p>
-
 <h2>Am I protected?</h2>
 
 <p>Take the <a
@@ -73,84 +65,8 @@ tracking protection page.</a>
 
 <h1>For brands and publishers</h1>
 
-<p>Increase the value of your brand and your content
-by using tracking protection.  More info on the
-<a href="http://www.aloodo.com/">Aloodo home page</a>.
-
-<h2>Quick start</h2>
-
-<p>Want to give your users a quick reminder?  Add the
-script to your site.</p>
-
-<pre><code>&lt;script src="http://ad.aloodo.com/ad.js"&gt;&lt;/script&gt;
-</code></pre>
-
-<p>This script will load one invisible iframe and
-attempt to <q>track</q> the user from site to site.
-If tracking succeeds, it will load additional
-JavaScript and CSS and show a warning.</p>
-
-<p>Users won't see the warning until they visit the
-<em>third</em> site that runs the iframe.</p>
-
-
-<h2>Your own tracking warnings</h2>
-
-<p>By default, the above script will load and
-display a warning pop-up.  If you prefer to
-supply your own warning, add an element with
-<code>id="tracking-warning-block"</code> or
-<code>id="tracking-warning-inline"</code> and
-<code>style="display: none"</code> to the page.
-Instead of displaying the popup, the script will set
-the existing element to block or inline. <b>Example:
-<a href="http://www.aloodo.org/privacy/">Aloodo
-privacy policy</a></b>.</p>
-
-
-<h2>Reverse tracking wall</h2>
-
-<p>A simple way to encourage tracking protection is
-a <q>reverse tracking wall</q> that makes some pages
-unavailable to tracked users.  A simple client-side
-reverse tracking wall is built in.<p>
-
-<p>To use this feature, set the JavaScript
-variable <code>trackingAlternateLocation</code> to
-the URL of the page to which users should be redirected if
-tracking is detected.</p>
-
-<pre><code>&lt;script type="text/javascript"&gt;
-var trackingAlternateLocation = 'http://example.com/wall-warning/';
-&lt;/script&gt;
-&lt;script type="text/javascript" src="http://ad.aloodo.com/ad.js"&gt;&lt;/script&gt;</code></pre>
-
-<p><b>Example: <a href="http://blog.aloodo.org/posts/reverse-tracking-wall/">Reverse tracking wall in two lines of JavaScript</a>.</b></p>
-
-<h2>Silent mode</h2>
-
-<p>Just put <a
-href="http://ad.aloodo.com/track/">http://ad.aloodo.com/track/</a>
-in an iframe, and ignore the message.  Your users will
-see a notification later, on other sites, if we can
-"track" them.</p>
-
-
-<h2>Customize it</h2>
-
-<p>If you prefer to use your own action to
-notify tracked users, you can also include <a
-href="http://ad.aloodo.com/track/">http://ad.aloodo.com/track/</a>
-in an iframe, and handle the <q>tracking detected</q>
-message in your own script.</p>
-
-<pre><code>&lt;iframe style="display: none"
- src="http://ad.aloodo.com/track/"&gt;&lt;/iframe&gt;</code></pre>
-
-<p>This can be useful for gathering information on
-how many of your users are vulnerable to third-party
-tracking.</p>
-
+<p>Add Aloodo warnings or reverse tracking walls to your site:
+<a href="http://blog.aloodo.org/misc/howto/">Howto</a>.
 
 <h2>Questions? Suggestions?</h2>
 
