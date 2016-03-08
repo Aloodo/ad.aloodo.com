@@ -77,6 +77,10 @@ function isMSIE() {
 	return "ActiveXObject" in window
 }
 
+function isSafari() {
+	return navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1
+}
+
 function setupAloodo() {
 	// This puts the tracker in an iframe.
 	var ifr = document.createElement('iframe');
@@ -88,9 +92,8 @@ function setupAloodo() {
 window.addEventListener("message", startAloodo, false);
 document.addEventListener("DOMContentLoaded", setupAloodo);
 
-// Workaround for not being able to send cross-domain messages
-// from iframe to its parent.  Assumes that MSIE is unprotected
-// if this script runs at all.
-if (isMSIE()) {
+// Assume that MSIE or Safari are unprotected if this script runs.
+// No Privacy Badger on these two browsers.
+if (isSafari() || isMSIE()) {
 	window.postMessage('tracking detected', '*');
 }
