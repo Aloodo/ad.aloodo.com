@@ -86,7 +86,7 @@ function setupAloodo() {
 }
 
 window.addEventListener("message", startAloodo, false);
-document.addEventListener("DOMContentLoaded", setupAloodo);
+window.addEventListener("load", setupAloodo);
 
 // Workaround for not being able to send cross-domain messages
 // from iframe to its parent.  Assumes that MSIE is unprotected
