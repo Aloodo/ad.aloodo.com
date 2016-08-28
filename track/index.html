@@ -10,7 +10,8 @@ function setCookie(name, value) {
 	var date = new Date();
 	date.setTime(date.getTime()+(365*24*60*60*1000));
 	var expires = "; expires="+date.toGMTString();
-	document.cookie = name+"="+value+expires+"; path=/";
+	var domain = "; domain=aloodo.com";
+	document.cookie = name+"="+value+domain+expires+"; path=/";
 	return value;
 }
 
