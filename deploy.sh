@@ -1,6 +1,8 @@
 #!/bin/sh
 
-DEST=root@track.aloodo.com:/var/www/html
+HOST=root@ad.aloodo.com
+DOCROOT=/var/www/html
+DEST="$HOST:$DOCROOT"
 
 scp ad.js $DEST
 scp alert.js $DEST
@@ -10,3 +12,4 @@ scp index.html $DEST
 scp -pr toastr $DEST
 scp -pr track $DEST
 scp track.js $DEST
+
