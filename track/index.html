@@ -10,7 +10,7 @@ function setCookie(name, value) {
 	var date = new Date();
 	date.setTime(date.getTime()+(365*24*60*60*1000));
 	var expires = "; expires="+date.toGMTString();
-	document.cookie = name+"="+value+expires+"; path=/";
+	document.cookie = name+'="'+value+'"'+expires+"; path=/";
 	return value;
 }
 
@@ -42,8 +42,10 @@ function getHost() {
 function addSite(site) {
 	var fp = 'aloodo.com';
 	var sitecookie = getCookie('site');
+	sitecookie = sitecookie.split('"').join('');
 	var ls = localStorage.getItem('site');
 	if (ls) {
+		ls = ls.split('"').join('');
 		sitecookie += ' ' + ls;
 	}
 	var sts = sitecookie.split(' ');

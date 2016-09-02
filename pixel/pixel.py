@@ -20,7 +20,9 @@ def format_headers(h):
 @route('/<path_domain>/')
 def pixel(path_domain=""):
     seen = {}
-    for c in request.cookies.site.split(' '):
+    sites = request.cookies.site
+    sites = sites.replace('"', '')
+    for c in sites.split(' '):
         if '.' in c:
             seen[c] = True
 
