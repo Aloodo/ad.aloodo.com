@@ -9,7 +9,9 @@ scp alert.js $DEST
 scp -pr css $DEST
 scp -pr images $DEST
 scp index.html $DEST
+scp -pr pixel $HOST:/var/www
 scp -pr toastr $DEST
 scp -pr track $DEST
 scp track.js $DEST
+ssh $HOST apachectl graceful
 

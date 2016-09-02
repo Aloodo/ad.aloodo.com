@@ -27,8 +27,6 @@ def pixel(path_domain=""):
     ref_domain = parse_url(request.get_header('Referer')).host
     req_domain = parse_url(request.url).host
 
-    print(req_domain)
-
     if ref_domain and ref_domain != req_domain:
         seen[ref_domain] = True
 
