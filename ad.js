@@ -1,7 +1,7 @@
 // Info here: http://ad.aloodo.com/
 
 function doAloodoPopup() {
-	var url = 'http://www.aloodo.org/protection/';
+	var url = 'https://www.aloodo.org/protection/';
 	var message = 	'<b>Third-party tracking detected.</b> ' +
 			'Missing or misconfigured tracking protection.';
 	var txt = '<a href="' + url + '">' + message + '</a>';
@@ -19,13 +19,13 @@ function toastrSetup() {
 		doAloodoPopup();
 	}
 	var sc = document.createElement('script');
-	sc.setAttribute('src', 'http://ad.aloodo.com/toastr/toastr.js');
+	sc.setAttribute('src', 'https://ad.aloodo.com/toastr/toastr.js');
 	document.body.appendChild(sc);
 	sc.onload = doAloodoPopup();
 	var cs = document.createElement('link');
 	cs.setAttribute("rel", "stylesheet");
 	cs.setAttribute("type", "text/css");
-	cs.setAttribute("href", 'http://ad.aloodo.com/toastr/toastr.css');
+	cs.setAttribute("href", 'https://ad.aloodo.com/toastr/toastr.css');
 	document.getElementsByTagName('head')[0].appendChild(cs);
 }
 
