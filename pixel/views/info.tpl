@@ -19,5 +19,7 @@
 	<img src="{{req_url}}" alt=" ">
 
 	<p><a href="{{req_url}}">This page is at {{req_url}}</a></p>
+
+	<p><a href="http://blog.aloodo.org/misc/howto/#pixel">How to use this pixel</a>
   </body>
 </html>

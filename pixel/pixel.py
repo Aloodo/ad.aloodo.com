@@ -6,7 +6,7 @@ from time import mktime
 import os.path
 from urllib3.util import parse_url
 
-from bottle import request, response, route, run, template
+from bottle import error, redirect, request, response, route, run, template
 
 dir = os.path.dirname(os.path.realpath(__file__))
 filename = os.path.join(dir, 'dot_clear.png')
@@ -16,8 +16,10 @@ with open(filename, 'rb') as px:
 def format_headers(h):
     return '\n'.join(['%s: %s' % (k, v) for (k, v) in h.items()])
 
+@error(404)
 @route('/')
 @route('/<path_domain>/')
+@route('/<path_domain>')
 def pixel(path_domain=""):
     seen = {}
     sites = request.cookies.site
@@ -62,5 +64,5 @@ def pixel(path_domain=""):
         return buf
 
 if __name__ == '__main__':
-    run(host='localhost', port=8080, reloader=True)
+    run(host='localhost', port=8000, reloader=True)
 
