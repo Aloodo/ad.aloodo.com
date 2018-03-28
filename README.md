@@ -3,17 +3,15 @@ ad.aloodo.com
 
 Third-party tracking protection tool for content sites.
 
-Info at: [ad.aloodo.com](http://ad.aloodo.com/)
-
 How to set up: [Aloodo for Web Publishers](https://www.aloodo.org/publishers/)
 
 Test it at: [tracking protection test](http://www.aloodo.org/test/)
 
 
-How to pass the Aloodo test
----------------------------
+How it works
+------------
 
-The fake "tracking" is designed to be obvious and foiled by any decent tracking protection tool.  
+The `ad.aloodo.com` site is a fake "tracker" designed to be detected and blocked by web privacy tools.  Any tracking protection method will still work.
 
  * Third-party JavaScript blocking
 
@@ -32,8 +30,6 @@ FAQ
 **Should I add ad.aloodo.com to my tracking protection tool's blacklist?** Yes, please.
 
 **Can I add just the iframe to my site?** Yes, please.
-
-**Can I fork this, send pull requests, all that stuff?** Yes, please.
 
 **What should I install to protect myself from third-party tracking?**  Get good [tracking protection](http://www.aloodo.org/protection/), not just
 a general-purpose ad blocker.
