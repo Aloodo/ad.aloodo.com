@@ -14,7 +14,7 @@
 			iframeId:	'ALOODO_FAKE_TRACKER_BLOCK_ME'
 		};
 		this._var = {
-			version:			'1.0.0',
+			version:			'1.0.1',
 			event:				{ load: [],
 							  detected: [] }
 		};
@@ -98,7 +98,6 @@
 		window.document.body.appendChild(ifr);
 		if (window.document.getElementById(id)) {
 			this._dlog('_addIFrame', id+' appended')
-			return;
 		}
 	}
 
