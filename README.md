@@ -1,7 +1,13 @@
 ad.aloodo.com
 =============
 
-Third-party tracking protection tool for content sites.
+Third-party tracking protection tool for content
+sites.  Measure tracking protection by your audience,
+and encourage readers to get protected.
+
+When fewer readers can be tracked from site to site,
+it's harder for ad money to flow to fraud and misinfo
+sites.
 
 How to set up: [Aloodo for Web Publishers](https://www.aloodo.org/publishers/)
 
@@ -11,7 +17,9 @@ Test it at: [tracking protection test](http://www.aloodo.org/test/)
 How it works
 ------------
 
-The `ad.aloodo.com` site is a fake "tracker" designed to be detected and blocked by web privacy tools.  Any tracking protection method will still work.
+The `ad.aloodo.com` site is a fake "tracker" designed to be detected and blocked by web privacy tools.
+
+Any tracking protection method will work.
 
  * Third-party JavaScript blocking
 
@@ -19,9 +27,10 @@ The `ad.aloodo.com` site is a fake "tracker" designed to be detected and blocked
 
  * Cookie double-keying
 
- * Explicit blacklisting
+ * Blocklists (Aloodo appears on the commonly used ones)
 
-This is intended to get non-users of tracking protection tools started with something, to help shift the benefits of web advertising toward sites and brands, and away from intermediaries and fraud.
+This is intended to get non-users of tracking protection tools started with something, not to advocate for
+a particular approach or tool.
 
 
 FAQ

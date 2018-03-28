@@ -1,4 +1,4 @@
-// Info here: http://ad.aloodo.com/
+// Deprecated. See new instructions at https://www.aloodo.org/publishers/
 
 function doAloodoPopup() {
 	var url = 'http://www.aloodo.org/protection/';
