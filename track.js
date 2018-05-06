@@ -68,17 +68,27 @@
 		console.log('[Aloodo]['+method+'] '+message);
 	};
 	
-	Aloodo.prototype.setOption = function(options, value) {
-		if(value !== undefined) {
-			var key = options;
-			options = {};
-			options[key] = value;
+	Aloodo.prototype.getOption = function(key) {
+		if (this._options.hasOwnProperty(key)) { 
+			return this._options[key];
+		} else {
+			return undefined;
 		}
-		for(var option in options) {
-			this._options[option] = options[option];
-			this._dlog('setOption', 'The option "'+option+'" was assigned to "'+options[option]+'"');
-		}
+	};
+
+	Aloodo.prototype.setOption = function(key, value) {
+		this._options[key] = value;
+		this._dlog('setOption', 'The option "' + key + '" was assigned the value "'+this._options[key]+'"');
 		return this;
+	};
+
+	Aloodo.prototype.setEuropeanMode = function(value) {
+		this._dlog('Setting European Mode to: ' + value);
+		return this.setOption('EuropeanMode', value);
+	};
+
+	Aloodo.prototype.getEuropeanMode = function(value) {
+		return this.getOption('EuropeanMode');
 	};
 
 	Aloodo.prototype._addIFrame = function() {
