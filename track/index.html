@@ -29,6 +29,7 @@ function getCookie(name) {
 
 function getHost() {
 	// within an iframe, "referrer" is the containing page.
+	var url;
 	if (parent !== window) {
 		url = document.referrer;
 	} else {
@@ -59,7 +60,7 @@ function addSite(site) {
 		if (!item || item.indexOf(fp, item.length - fp.length) !==-1) {
 			continue;
 		}
-		if(seen[item] !== 1) {
+		if(!seen.hasOwnProperty(item)) {
                seen[item] = 1;
                out[j++] = item;
          }
