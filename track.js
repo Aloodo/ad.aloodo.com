@@ -14,9 +14,11 @@
 			iframeId:	'ALOODO_FAKE_TRACKER_BLOCK_ME'
 		};
 		this._var = {
-			version:			'1.0.1',
+			version:			'1.1.0',
 			event:				{ load: [],
-							  detected: [] }
+							  detected: [],
+							  blocked: []
+							}
 		};
 		if(options !== undefined) {
 			this.setOption(options);
@@ -34,6 +36,8 @@
 				which = 'load'; 
 			} else if (ev.data === 'tracking detected') {
 				which = 'detected';
+			} else if (ev.data === 'cookie blocked') {
+				which = 'blocked';
 			} else {
 				return;
 			}
@@ -121,6 +125,9 @@
 	};
 	Aloodo.prototype.onDetected = function(fn) {
 		return this.on('detected', fn);
+	};
+	Aloodo.prototype.onBlocked = function(fn) {
+		return this.on('blocked', fn);
 	};
 	
 	window.Aloodo = Aloodo;

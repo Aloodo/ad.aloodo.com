@@ -68,6 +68,10 @@ function addSite(site) {
 	var newcookie = out.join(' ');
 	setCookie('site', newcookie);
 	localStorage.setItem('site', newcookie);
+	var maybeCookie = getCookie('site');
+	if (maybeCookie != newcookie) {
+		parent.postMessage('cookie blocked', '*');
+	}
 }
 
 function doTrack() {
